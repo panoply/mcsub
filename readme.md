@@ -39,7 +39,7 @@ Simply add McSub to your build `import Mcsub from 'mcsub';` and from here call i
 	    callback:  'cb',
 	    reponse:  '#response',
         onSubmit(){
-            console.log(this.button); // Example
+            console.log(this.submit); // Example
         },
         complete(){
             console.log(this.inputs); // Example

@@ -11,6 +11,7 @@ export default class Mcsub {
         this.config = Mcsub.mergeSettings(options);
         this.element = document.querySelector(element);
         this.form = this.element.children[0];
+        this.submit = this.form.querySelector('button[type="submit"]');
         this.url = this.form.action.replace('/post', '/post-json?');
         this.inputs = this.form.querySelectorAll('input');
         this.response = this.element.querySelector(this.config.response);
