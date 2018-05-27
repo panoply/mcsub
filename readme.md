@@ -23,7 +23,7 @@ McSub will automatically add a robot input to your `form` and dynamically modify
        </form>
     </div>
 
-The McSub Subscriber HTML form is vastly different to the standard HTML form that Mailchimp generally requires from you. This gives you more freedom to customise the style of the form and as an added bocus McSub will also re-write your form to the Mailchimp defaults as a fallback.
+The McSub Subscriber HTML form is vastly different to the standard HTML form that Mailchimp generally requires from you. This gives you more freedom to customise the style of the form and as an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
 <br>
 > **Ensure** `https` protocol is used in the form action
 
@@ -31,7 +31,7 @@ The McSub Subscriber HTML form is vastly different to the standard HTML form tha
 ### Initialise
 Simply add McSub to your build `import Mcsub from 'mcsub';` and from here call it with the following options:
 
-    new McSub('#form-wrapper-id', {
+    new Mcsub('#form-wrapper-id', {
 	    user:  'abcdefghijklmnopqrstuvwxyz',
 	    list:  '123456789',
 	    callback:  'cb',
