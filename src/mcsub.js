@@ -28,7 +28,9 @@ export default class Mcsub {
             user: '', // Required
             list: '', // Required
             callback: 'cb',
-            response: '#response'
+            response: '#response',
+            onSubmit: () => {},
+            complete: () => {}
         };
 
         const userSettings = options;
@@ -106,6 +108,8 @@ export default class Mcsub {
             return false;
         }
 
+        this.config.onSubmit.call(this);
+
         // Empty data value
         let data = '';
 
@@ -178,6 +182,9 @@ export default class Mcsub {
 
             // Remove number form Response
             this.response.innerHTML = data.msg.includes(' - ') ? data.msg.substring(3) : data.msg;
+
+            // Call onComplete
+            this.config.complete.call(this);
         };
     }
 };
