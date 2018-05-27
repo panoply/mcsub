@@ -2,6 +2,8 @@
 
 McSub (Mailchimp Subscriptions) is a tiny < 1kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an Ajax-like integration for email subscriptions using MailChimp and is as a replacement to the jQuery dependant monolothic embedded form script that MailChimp requires you to include.
 
+The original score for this implementation before I added falvor was from [Michiel Vandewalle](https://github.com/michiel-vandewalle) with his component the [Mailchimp AJAX form-submit](https://github.com/michiel-vandewalle/Mailchimp-AJAX-form-submit-vanillaJS).
+
 <br>
 Codepen Example: https://codepen.io/panoply/pen/erqbwx
 
