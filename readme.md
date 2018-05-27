@@ -38,10 +38,10 @@ Simply add McSub to your build `import Mcsub from 'mcsub';` and from here call i
 	    list:  '123456789',
 	    callback:  'cb',
 	    reponse:  '#response',
-        onSubmit(this){
+        onSubmit(){
             console.log(this.button); // Example
         },
-        complete(this){
+        complete(){
             console.log(this.inputs); // Example
         }
     });
