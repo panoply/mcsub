@@ -1,6 +1,6 @@
 ## McSub – MailChimp Subscriber
 
-McSub (Mailchimp Subscriptions) is a tiny < 1.2kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an Ajax-like integration for email subscriptions using MailChimp and is as a replacement to the jQuery dependant monolothic embedded form script that MailChimp requires you to include.
+McSub (Mailchimp Subscriptions) is a tiny < 1.4kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an Ajax-like integration for email subscriptions using MailChimp and is as a replacement to the jQuery dependant monolothic embedded form script that MailChimp requires you to include.
 
 The original score for this implementation before I added falvor was from [Michiel Vandewalle](https://github.com/michiel-vandewalle) with his component the [Mailchimp AJAX form-submit](https://github.com/michiel-vandewalle/Mailchimp-AJAX-form-submit-vanillaJS).
 
@@ -26,6 +26,7 @@ McSub will automatically add a robot input to your `form` and dynamically modify
     </div>
 
 The McSub Subscriber HTML form is vastly different to the standard HTML form that Mailchimp generally requires from you. This gives you more freedom to customise the style of the form and as an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
+
 <br>
 > **Ensure** `https` protocol is used in the form action
 
@@ -60,7 +61,7 @@ The `list` option is a **required** option that is the email list id. The email 
 The `callback` option allows you to define a custom callback parameter. It defaults to `cb` but you can change it incase `cb` is being used by something else.
 
 **response**<br>
-The `response` option defaults to an element within your `<form>` with the `id` of `#response`. Mailchimp will return validation responses which show up within this element.
+The `response` option defaults to an element within your `<form>` with the `id` of `#response`. Mailchimp will return responses which show up within this element and depending on the response type, a class is of either `.error` or `.success` will be added to this element.
 
 **onSubmit**<br>
 The `onSubmit()` option function is run on form submission. Access the Forms elements via `this` to get things like the form submit button, inputs etc.
