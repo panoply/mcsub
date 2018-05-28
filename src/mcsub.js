@@ -10,13 +10,18 @@ export default class Mcsub {
 	constructor(element, options) {
 		this.config = Mcsub.mergeSettings(options);
 		this.element = document.querySelector(element);
+		this.config.user === '' && Mcsub.require('user id'); // Check
+		this.config.list === '' && Mcsub.require('list id'); // Check
 		this.form = this.element.children[0];
 		this.button = this.form.querySelector('button[type="submit"]');
-		this.url = this.form.action.replace('/post', '/post-json?');
 		this.inputs = this.form.querySelectorAll('input');
 		this.response = this.element.querySelector(this.config.response);
 		this.robot(`b_${this.config.user}_${this.config.list}`);
 		this.init();
+	}
+
+	static require(option){
+		throw new Error(`You are missing the ${option} 😭`);
 	}
 
 	/**
@@ -78,6 +83,9 @@ export default class Mcsub {
 	 */
 	init() {
 
+		// Change URL
+		this.url = this.form.action.replace('/post', '/post-json?');
+
 		// Add Submit Listener
 		this.form.addEventListener('submit', event => this.submit(event));
 
@@ -114,6 +122,7 @@ export default class Mcsub {
 			return false;
 		}
 
+		// Call onSubmit fn
 		this.config.onSubmit.call(this);
 
 		// Empty data value
