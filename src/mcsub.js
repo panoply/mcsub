@@ -101,8 +101,11 @@ export default class Mcsub {
 	 * Will act as a fallback.
 	 */
 	default () {
-		const fallback = `/post?u=${this.config.user}&amp;id=${this.config.list}`;
-		this.form.action = this.form.action.replace('/post', fallback);
+		Mcsub.setAttrs(this.form, {
+			'action': this.form.action.replace('/post', `/post?u=${this.config.user}&id=${this.config.list}`),
+			'method': 'post',
+			'target': '_blank'
+		});
 		for (let i = 0; i < this.inputs.length; i++) {
 			this.inputs[i].id = `mce-${this.inputs[i].name}`;
 		}
