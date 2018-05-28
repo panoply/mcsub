@@ -4,7 +4,6 @@ McSub (Mailchimp Subscriptions) is a tiny < 1.4kb (gzipped) vanilla JavaScript E
 
 The original score for this implementation before was from [Michiel Vandewalle](https://github.com/michiel-vandewalle) with his component the [Mailchimp AJAX form submit](https://github.com/michiel-vandewalle/Mailchimp-AJAX-form-submit-vanillaJS).
 
-<br>
 [Codepen Example](https://codepen.io/panoply/pen/erqbwx)
 
 ### Install
