@@ -30,6 +30,7 @@ export default class Mcsub {
 			list: '', // Required
 			callback: 'cb',
 			response: '#response',
+			onInit: () => {},
 			onSubmit: () => {},
 			complete: () => {}
 		};
@@ -76,8 +77,12 @@ export default class Mcsub {
 	 * Initialize fn.
 	 */
 	init() {
+
 		// Add Submit Listener
 		this.form.addEventListener('submit', event => this.submit(event));
+
+		// onInit
+		this.config.onInit.call(this);
 
 		// Apply fallback default (after submit listener)
 		this.default();
