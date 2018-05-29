@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/mcsub.svg?longCache=true&style=flat-square)
+
 ## 🍔 McSub – Client Side MailChimp Subscriptions
 
 McSub (Mailchimp Subscriptions) is a tiny < 1.4kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an Ajax-like integration for email subscriptions using MailChimp and is a replacement to their jQuery dependant monolothic embedded form script that MailChimp requires you to include.
