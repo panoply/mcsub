@@ -50,7 +50,7 @@ Simply add McSub to your build `import Mcsub from 'mcsub';` and initialise it ac
             console.log(this.button); // Example
         },
         onSucess(){
-            console.log('Subcribe Sucess'); // Example
+            console.log('Subscribe Sucess'); // Example
         },
         onError(){
             console.log('Subscribe Error'); // Example
