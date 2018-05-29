@@ -2,9 +2,9 @@
 
 ## 🍔 McSub – Client Side MailChimp Subscriptions
 
-McSub (Mailchimp Subscriptions) is a tiny < 1.4kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an Ajax-like integration for email subscriptions using MailChimp and is a replacement to their jQuery dependant monolothic embedded form script that MailChimp requires you to include.
+McSub (Mailchimp Subscriptions) is a tiny < 1.4kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an ajax-like integration for email subscriptions using MailChimp and is a drop-in replacement to the jQuery dependant, monolothic embedded form script that MailChimp requires you to include.
 
-The original score for this implementation before was from [Michiel Vandewalle](https://github.com/michiel-vandewalle) with his component the [Mailchimp AJAX form submit](https://github.com/michiel-vandewalle/Mailchimp-AJAX-form-submit-vanillaJS).
+The original score for this implementation was from [Michiel Vandewalle](https://github.com/michiel-vandewalle) with his component the [Mailchimp AJAX form submit](https://github.com/michiel-vandewalle/Mailchimp-AJAX-form-submit-vanillaJS).
 
 [Codepen Example](https://codepen.io/panoply/pen/erqbwx)
 
@@ -26,7 +26,12 @@ McSub will automatically add a robot input to your `form` and dynamically modify
        </form>
     </div>
 
-The McSub Subscriber HTML form is vastly different to the standard HTML form that Mailchimp requires from you. This approach means you can customise the style of the form to best fit your integration. As an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
+As you can see, the McSub embedded subscribe form is vastly different to the standard HTML form that Mailchimp requires from you. The McSub approach enables you to customise the style of the form to best fit your integration. As an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
+
+Some things to note:
+
+- The from `action` does not require the full list path. Simply end your action list path at `/post` and McSub will re-write it upon init.
+- The form does not use `<input type="button">` but instead uses `<button type="submit">`
 
 > Ensure the **https** protocol is ALWAYS used in the form action
 
