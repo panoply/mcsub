@@ -184,25 +184,37 @@ export default class Mcsub {
 	respond(el, data) {
 		return {
 			'error': () => {
+
+				// Apply Error Class
 				el.classList.contains('success') ?
 					el.classList.replace('success', 'error') :
 					el.classList.add('error');
 
+				// Apply Response Message from MailChimp
 				el.innerHTML = data.msg.includes(' - ') ?
 					data.msg.substring(3) :
 					data.msg;
+
+				// Display Response element (Removes display:none style)
+				el.hasAttribute('style') && el.removeAttribute('style');
 
 				// onError
 				this.config.onError.call(this);
 			},
 			'success': () => {
+
+				// Apply Success Class
 				el.classList.contains('error') ?
 					el.classList.replace('error', 'success') :
 					el.classList.add('success');
 
+				// Apply Response Message from MailChimp
 				el.innerHTML = data.msg;
 
-				// onSuccess
+				// Display Response element (Removes display:none style)
+				el.hasAttribute('style') && el.removeAttribute('style');
+
+				// onSuccess Callback Function
 				this.config.onSuccess.call(this);
 			}
 		}[data.result]();
