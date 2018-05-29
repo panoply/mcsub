@@ -22,17 +22,20 @@ McSub will automatically add a robot input to your `form` and dynamically modify
           <button type="submit" name="subscribe">
              Submit
           </button>
-          <div id="response"></div>
+          <div id="response" style="display:none"></div>
        </form>
     </div>
 
-As you can see, the McSub embedded subscribe form is vastly different to the standard HTML form that Mailchimp requires from you. The McSub approach enables you to customise the style of the form to best fit your integration. As an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
+As you can see, the McSub embedded subscribe form is vastly different to the standard HTML form that Mailchimp requires from you. The McSub approach enables you to customise the style of the form to best fit your integration.
+
+> As an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
 
 **Please Note**:
 
 - The from `action` does not require the full list path. End your action list path at `/post`.
 - Always ensure the **https** protocol is used in the form action.
-- The form does not use `<input type="button">` but instead uses `<button type="submit">`
+- The response `div` element should should have `style="display:none;` attribute.
+- The form does not use `<input type="button">` so instead use `<button type="submit">`.
 
 
 ### Initialise
@@ -74,7 +77,7 @@ The `list` option is a **required** option that is your subscription email list 
 The `callback` option allows you to define a custom callback parameter. It defaults to `cb` but you can change it incase `cb` is being used by something else.
 
 **response**<br>
-The `response` option defaults to an element within your `<form>` with the `id` of `#response`. Mailchimp will return responses which show up within this element and depending on the response type, a class of either `.error` or `.success` will be added to the element giving you additional styling.
+The `response` option defaults to an element within your `<form>` with the `id` of `#response`. Mailchimp will return responses which show up within this element and depending on the response type, a class of either `.error` or `.success` will be added to the element giving you additional styling. For best practice always add a `style="display:none;"` attribute to the response element. McSub will remove this upon response callback by default.
 
 **onInit()**<br>
 The `onInit()` callback option function is run on init after the form subit listener is applied.
