@@ -1,6 +1,6 @@
 {
   "name": "mcsub",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "browser": "dist/mcsub.min.js",
   "main": "dist/mcsub.min.js",
   "repository": "panoply/mcsub",
