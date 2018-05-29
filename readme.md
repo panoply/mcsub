@@ -1,4 +1,4 @@
-![npm](https://img.shields.io/npm/v/mcsub.svg?longCache=true&style=flat-square)
+[![npm version](https://badge.fury.io/js/mcsub.svg)](https://www.npmjs.com/package/mcsub)
 
 ## 🍔 McSub – Client Side MailChimp Subscriptions
 
