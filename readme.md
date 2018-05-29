@@ -76,6 +76,12 @@ The `onInit()` option function is run on init after the form subit listener is a
 **onSubmit**<br>
 The `onSubmit()` option function is run on form submission. Access the Forms elements via `this` to get things like the form submit button, inputs etc.
 
+**onSuccess**<br>
+The `onSuccess()` option function is run on if subscription was successful.
+
+**onError**<br>
+The `onError()` option function is run on if subscription was unsuccessful and/or encounted an error.
+
 **complete**<br>
 The `complete()` option function is run after form submission has completed and validation text has been appended within the `response` element. Access the form via `this` to get things like the form submit button, inputs etc. The reason complete runs after validation text is appended is because only then are we sure that we have received the response from MailChimp.
 
@@ -91,7 +97,6 @@ The 3 option functions `onInit()`, `onSubmit()` and `complete()` can be used to 
 
 
 ## Todo
-
  - Better Documentation
  - Tests
 

@@ -20,7 +20,7 @@ export default class Mcsub {
 		this.init();
 	}
 
-	static require(option){
+	static require(option) {
 		throw new Error(`You are missing the ${option} 😭`);
 	}
 
@@ -37,7 +37,9 @@ export default class Mcsub {
 			response: '#response',
 			onInit: () => {},
 			onSubmit: () => {},
-			complete: () => {}
+			complete: () => {},
+			onSuccess: () => {},
+			onError: () => {}
 		};
 
 		const userSettings = options;
@@ -186,16 +188,22 @@ export default class Mcsub {
 					el.classList.replace('success', 'error') :
 					el.classList.add('error');
 
-				return el.innerHTML = data.msg.includes(' - ') ?
+				el.innerHTML = data.msg.includes(' - ') ?
 					data.msg.substring(3) :
 					data.msg;
+
+				// onError
+				this.config.onError.call(this);
 			},
 			'success': () => {
 				el.classList.contains('error') ?
 					el.classList.replace('error', 'success') :
 					el.classList.add('success');
 
-				return el.innerHTML = data.msg;
+				el.innerHTML = data.msg;
+
+				// onSuccess
+				this.config.onSuccess.call(this);
 			}
 		}[data.result]();
 	}
