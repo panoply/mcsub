@@ -28,12 +28,11 @@ McSub will automatically add a robot input to your `form` and dynamically modify
 
 As you can see, the McSub embedded subscribe form is vastly different to the standard HTML form that Mailchimp requires from you. The McSub approach enables you to customise the style of the form to best fit your integration. As an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
 
-Some things to note:
+**Please Note**:
 
-- The from `action` does not require the full list path. Simply end your action list path at `/post` and McSub will re-write it upon init.
+- The from `action` does not require the full list path. End your action list path at `/post`.
+- Always ensure the **https** protocol is used in the form action.
 - The form does not use `<input type="button">` but instead uses `<button type="submit">`
-
-> Ensure the **https** protocol is ALWAYS used in the form action
 
 
 ### Initialise
@@ -79,6 +78,17 @@ The `onSubmit()` option function is run on form submission. Access the Forms ele
 
 **complete**<br>
 The `complete()` option function is run after form submission has completed and validation text has been appended within the `response` element. Access the form via `this` to get things like the form submit button, inputs etc. The reason complete runs after validation text is appended is because only then are we sure that we have received the response from MailChimp.
+
+## Option Functions
+The 3 option functions `onInit()`, `onSubmit()` and `complete()` can be used to access elements within the form. Using `this` within the each function gives to access these additional elements.
+
+| Callback | Description  |
+|--|--|
+|`this.element` | Returns the wrapper element (`#from-wrapper-id`) |
+|`this.inputs` | Returns an array of `input` fields within the form |
+|`this.button` | Returns the the submit button element |
+|`this.response` | Returns the `response` div element |
+
 
 ## Todo
 
