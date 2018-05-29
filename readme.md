@@ -49,6 +49,12 @@ Simply add McSub to your build `import Mcsub from 'mcsub';` and initialise it ac
         onSubmit(){
             console.log(this.button); // Example
         },
+        onSucess(){
+            console.log('Subcribe Sucess'); // Example
+        },
+        onError(){
+            console.log('Subscribe Error'); // Example
+        },
         complete(){
             console.log(this.inputs); // Example
         }
@@ -70,20 +76,20 @@ The `callback` option allows you to define a custom callback parameter. It defau
 **response**<br>
 The `response` option defaults to an element within your `<form>` with the `id` of `#response`. Mailchimp will return responses which show up within this element and depending on the response type, a class of either `.error` or `.success` will be added to the element giving you additional styling.
 
-**onInit**<br>
-The `onInit()` option function is run on init after the form subit listener is applied.
+**onInit()**<br>
+The `onInit()` callback option function is run on init after the form subit listener is applied.
 
-**onSubmit**<br>
-The `onSubmit()` option function is run on form submission. Access the Forms elements via `this` to get things like the form submit button, inputs etc.
+**onSubmit()**<br>
+The `onSubmit()` callback option function is run on form submission. Access the Forms elements via `this` to get things like the form submit button, inputs etc.
 
-**onSuccess**<br>
-The `onSuccess()` option function is run on if subscription was successful.
+**onSuccess()**<br>
+The `onSuccess()` callback option function is run if subscription was successful.
 
-**onError**<br>
-The `onError()` option function is run on if subscription was unsuccessful and/or encounted an error.
+**onError()**<br>
+The `onError()` callback option function is run if subscription was unsuccessful and/or encounted an error.
 
-**complete**<br>
-The `complete()` option function is run after form submission has completed and validation text has been appended within the `response` element. Access the form via `this` to get things like the form submit button, inputs etc. The reason complete runs after validation text is appended is because only then are we sure that we have received the response from MailChimp.
+**complete()**<br>
+The `complete()` callback option function is run after form submission has completed and validation text has been appended within the `response` element. Access the form via `this` to get things like the form submit button, inputs etc. The reason complete runs after validation text is appended is because only then are we sure that we have received the response from MailChimp.
 
 ## Option Functions
 The 3 option functions `onInit()`, `onSubmit()` and `complete()` can be used to access elements within the form. Using `this` within the each function gives to access these additional elements.
