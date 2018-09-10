@@ -36,6 +36,7 @@ As you can see, the McSub embedded subscribe form is vastly different to the sta
 - Always ensure the **https** protocol is used in the form action.
 - The response `div` element should should have `style="display:none;` attribute.
 - The form does not use `<input type="button">` so instead use `<button type="submit">`.
+- The name of the email input should be capitalized as EMAIL for the API response to work correctly.
 
 
 ### Initialise
