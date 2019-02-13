@@ -135,7 +135,7 @@ export default class Mcsub {
 
 		// Build script src URL
 		for (let i = 0; i < this.inputs.length; i++) {
-			data += `u=${this.config.user}&id=${this.config.list}&c=${this.config.callback}&${this.inputs[i].name}=${encodeURIComponent(this.inputs[i].value)}`;
+			data += `u=${this.config.user}&id=${this.config.list}&c=${this.config.callback}&${this.inputs[i].name}=${encodeURIComponent(this.inputs[i].value)}&`;
 		}
 
 		this.setScript(data);
