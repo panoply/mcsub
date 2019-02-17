@@ -4,9 +4,10 @@
 
 McSub (Mailchimp Subscriptions) is a tiny < 1.4kb (gzipped) vanilla JavaScript ES6 implementation that acts a simple wrapper for client side email subscriptions with Mailchimp. McSub enables an ajax-like integration for email subscriptions using MailChimp and is a drop-in replacement to the jQuery dependant, monolothic embedded form script that MailChimp requires you to include.
 
-The original score for this implementation was from [Michiel Vandewalle](https://github.com/michiel-vandewalle) with his component the [Mailchimp AJAX form submit](https://github.com/michiel-vandewalle/Mailchimp-AJAX-form-submit-vanillaJS).
+[View Demo](https://flems.io/#0=N4IgZglgNgpgziAXAbVAOwIYFsZJAOgAsAXLKEAGhAGMB7NYmBvAHkICYA+QHg3AVfYFlqAZQCuAIwAEACn4ZoAYUIQsABwmixcagCcIK4hHoBKFgHoOnADpoWKzgBUlcCRGcY0EmAA9sK2BNowCUENCQB3JWpCT0wxWDcAKwwvAFooCABrGE8sMRgAE3yCnLkoCThxLV19QzQ4FjFtThE4CDQAcwksUqjlFXwJACUYDHyJYkJs-NpqERwGDAN6CXcx9phiccmJPxF2toCPFgwJQm0YMABeSxASYhU4RFNTfYnxfDosUxV3Wj8AT1MWGoFTEN3GGG062I1xAAH04u4MjdOABxCBvMRmDBWGzfXFsJrWawsfIQABuLnysOBoPB1CgGDgcFhoKqEDyKOsEgkLDAtG0WBW1CWaFhdweT1MjQgXmItCg+BaAEYAMz4dJwYgpbqYdYfWhfNk6Dkwb60LXgtC0ckYdL5RYwXE8nksNoqESbYj-FQwWEwbrQK3YP03ACi-AAggBJAAy4L8GGoMEICqK2lhYYYMG0EjDgbKo3y52Z4Iwnpmhr8G1DIECYC5HhdDU98o83t9rPEWAxwZwXc0Js5IGdLp5GnZnKbrulrfoo9dZMpEGpNxLKnocBg9MZzNh68325A5W9sFhZLgif+iGtaCPnDMS9HZn5goJpiflBAW9gItqCEQEA1UQAA2EAAF8KHQEM8HwBIECoOhs2YQDTAAKjQ6wQnEPMfFUWBrDQ0xiTQO8wmCEFxCkG4AGJaXEG4KAkYBuQkFoc0QCQbnyagMBAjBlTEXiAAYYGVAAOcT2BgcSwAAFhgdgxFVAB2cTGIkZ4hhgABHEQIHOfJWM1YhOJuVUAE5lRUkCRhUsBhI0rThj0gyClY+hozQDEpCMFjp000xcN8fxAk8WB5k2VYJAPOpsi1f50g6Q4vN7AKJlcfAYAiphiHwBLYHwMQBXTCRLgkAByZUVC8CQHTgSYxlTe42gyCqAG5WMgjy0A0HtiF85jWJ5LSwzw6sAiCMQ53bbxNiidx9mSiImHUbtXFaZYtUhYg4GGrZMum4g23wNo720AAJex+FjMquJAWNaFGNp2huTqm26jx6FEahk2ZXz-LHCQkLgBUYA1Wh2ikCqJyHbIfr+uAKqMd6x1G8bQqmmaT0Sl7DmBqtYEYfaMrgIqZtO0icyum67puWHdDyIyQFRiRPsOMNtG0AUAf2kagoAeV9Dx5E3MG+YJuowYhqGYcqOG8y5gVkfawLgvw7cPooVjPmrRhBsBl19pB6WoEh6HRY1xgVbVsaQs1-b0ftyaJCOtscaSzpll1onNbHUnyeO+hKfOmnbvK+n1uIN6uuscCUesL9degHM8DEDA8nIKgfxgP9NzwdgQMQayIKgkBMBwWCtGZJP6EYFDbnYIam26KE2hSYqg6wTjhJq97wJI-L5cZ7JDZ+QoXs49he68VnulSMIVwmKeLJn-vrCHwcR9dmbtbQTfJ2yd1PWbnlx7JDpOJUmqJGVOS+7jjfjW3-BYq3U+diLF6UnlFROOVNej997P1NBIV+8ANxxSykrXMhs6Bm20JxQy69gHD1AeAy8h4h6-XgM4OBCoBScXaOcJgKDa6qBTtoPA1cELfmyrnUUAEQAqWLhBAAulQJKGQAKoHLjBQC9ExBfhENocggEJSPGeCINAKgMjtANF8QRAABYS+BlT4HYB+VwxAgSUTEPgHs+94Jfg7LgQC7J9DsPAkAA)
 
-[Codepen Example](https://codepen.io/panoply/pen/erqbwx)
+## Feature Requests
+McSub is approaching v1.0 with additional features, bug fixes and more. If you have a feature request or something you would like to see in v1 please submit an issue. 
 
 ### Install
 
@@ -15,7 +16,7 @@ The original score for this implementation was from [Michiel Vandewalle](https:/
 ### HTML
 
 McSub will automatically add a robot input to your `form` and dynamically modify it to fit the prerequisites MailChimp requires in their embedded forms which this means you will only need the bare minimum boiler HTML subscription form when you're using McSub, example:
-
+```html
     <div id="form-wrapper-id">
        <form action="https://*.list-manage.com/subscribe/post">
           <input type="email" name="EMAIL" placeholder="Email">
@@ -25,7 +26,7 @@ McSub will automatically add a robot input to your `form` and dynamically modify
           <div id="response" style="display:none"></div>
        </form>
     </div>
-
+```
 As you can see, the McSub embedded subscribe form is vastly different to the standard HTML form that Mailchimp requires from you. The McSub approach enables you to customise the style of the form to best fit your integration.
 
 > As an added bonus McSub will also re-write your form to the Mailchimp defaults as a fallback.
@@ -42,6 +43,7 @@ As you can see, the McSub embedded subscribe form is vastly different to the sta
 ### Initialise
 Simply add McSub to your build `import Mcsub from 'mcsub';` and initialise it according to your requirements.
 
+```js
     new Mcsub('#form-wrapper-id', {
 	    user:  'abcdefghijklmnopqrstuvwxyz',
 	    list:  '123456789',
@@ -63,6 +65,7 @@ Simply add McSub to your build `import Mcsub from 'mcsub';` and initialise it ac
             console.log(this.inputs); // Example
         }
     });
+```
 
 ## Options
 **element**<br>
@@ -109,6 +112,10 @@ The 3 option functions `onInit()`, `onSubmit()` and `complete()` can be used to 
 ## Todo
  - Better Documentation
  - Tests
+
+## Contributions
+
+Contributions and feedback are welcome.
 
 ## License
 
